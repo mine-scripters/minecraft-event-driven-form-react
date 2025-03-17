@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c && dts-bundle-generator -o dist/MinecraftEventDrivenFormReact.d.ts src/index.ts ",
-    "docs": "npx ladle build",
+    "docs": "npx ladle build --base /minecraft-event-driven-form-react/",
     "test": "jest",
     "prettier": "npm run prettier:base -- --write",
     "prettier:check": "npm run prettier:base -- --check",
