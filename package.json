@@ -4,7 +4,7 @@
   "description": "Event driven minecraft forms in the web",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c && dts-bundle-generator -o dist/MinecraftEventDrivenFormReact.d.ts src/index.ts ",
+    "build": "rollup -c && dts-bundle-generator --external-inlines '@mine-scripters/minecraft-event-driven-form-base' -o dist/MinecraftEventDrivenFormReact.d.ts src/index.ts ",
     "docs": "npx ladle build --base /minecraft-event-driven-form-react/",
     "test": "jest",
     "prettier": "npm run prettier:base -- --write",
@@ -26,7 +26,7 @@
   "author": "Josejulio Martínez",
   "license": "Apache-2.0",
   "dependencies": {
-    "@mine-scripters/minecraft-event-driven-form-base": "^1.0.0"
+    "@mine-scripters/minecraft-event-driven-form-base": "^1.0.1"
   },
   "devDependencies": {
     "@ladle/react": "^5.0.1",
