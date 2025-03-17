@@ -1,6 +1,6 @@
 {
-  "name": "minecraft-event-driven-form-react",
-  "version": "1.0.0",
+  "name": "@mine-scripters/minecraft-event-driven-form-react",
+  "version": "0.0.0",
   "description": "Event driven minecraft forms in the web",
   "main": "index.js",
   "scripts": {
