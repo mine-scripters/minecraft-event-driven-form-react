@@ -20,13 +20,9 @@ export const MinecraftInputDropdown: React.FunctionComponent<React.PropsWithChil
         <label>{label}</label>
       </div>
       <div className="minecraft-form-input minecraft-form-input-dropdown">
-      <select
-                    name={name}
-                    value={value}
-                    onChange={onChange}
-                  >
-                    {children}
-                    </select>
+        <select name={name} value={value} onChange={onChange}>
+          {children}
+        </select>
       </div>
     </React.Fragment>
   );

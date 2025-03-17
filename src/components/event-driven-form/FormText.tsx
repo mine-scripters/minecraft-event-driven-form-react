@@ -22,7 +22,7 @@ export const fromNormalizedContent = (content: NormalizedTextContent): string =>
     case 'translate':
       return translate(content);
     case 'array':
-      return content.array.map(e => fromNormalizedContent(e)).join('');
+      return content.array.map((e) => fromNormalizedContent(e)).join('');
   }
 
   assertNever(content);

@@ -25,15 +25,7 @@ export const MinecraftInputSlider: React.FunctionComponent<MinecraftInputSliderP
         <label>{label}</label>
       </div>
       <div className="minecraft-form-input minecraft-form-input-slider">
-      <input
-                    type="range"
-                    name={name}
-                    min={min}
-                    max={max}
-                    step={step}
-                    value={value}
-                    onChange={onChange}
-                  />
+        <input type="range" name={name} min={min} max={max} step={step} value={value} onChange={onChange} />
       </div>
     </React.Fragment>
   );

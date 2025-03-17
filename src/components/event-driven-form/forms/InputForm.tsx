@@ -55,28 +55,26 @@ export const InputForm: React.FunctionComponent<InputFormProps> = ({ form, trigg
           }));
         };
 
-        const inputClassName = `minecraft-form-input minecraft-form-input-${e.type}`;
-
         switch (e.type) {
           case 'dropdown':
             return (
-                <MinecraftInputDropdown
-                    key={key}
-                    label={<FormText>{e.text}</FormText>}
-                    name={key}
-                    value={value as string | number}
-                    onChange={(event) => setValue(key, event.currentTarget.value)}
-                >
-                    {e.options.map((o, oIndex) => (
-                        <MinecraftInputDropdownItem key={oIndex} value={o.value as string | number}>
-                            {fromNormalizedContent(args.normalize(o.text))}
-                        </MinecraftInputDropdownItem>
-                    ))}
-                </MinecraftInputDropdown>
+              <MinecraftInputDropdown
+                key={key}
+                label={<FormText>{e.text}</FormText>}
+                name={key}
+                value={value as string | number}
+                onChange={(event) => setValue(key, event.currentTarget.value)}
+              >
+                {e.options.map((o, oIndex) => (
+                  <MinecraftInputDropdownItem key={oIndex} value={o.value as string | number}>
+                    {fromNormalizedContent(args.normalize(o.text))}
+                  </MinecraftInputDropdownItem>
+                ))}
+              </MinecraftInputDropdown>
             );
           case 'slider':
             return (
-                <MinecraftInputSlider
+              <MinecraftInputSlider
                 key={key}
                 label={<FormText>{e.text}</FormText>}
                 name={key}
@@ -85,7 +83,7 @@ export const InputForm: React.FunctionComponent<InputFormProps> = ({ form, trigg
                 max={e.max}
                 step={e.step}
                 onChange={(event) => setValue(key, event.currentTarget.value)}
-                />
+              />
             );
           case 'text':
             return (

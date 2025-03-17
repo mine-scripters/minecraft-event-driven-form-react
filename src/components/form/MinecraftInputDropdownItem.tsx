@@ -9,9 +9,5 @@ export const MinecraftInputDropdownItem: React.FunctionComponent<MinecraftInputD
   value,
   children,
 }) => {
-  return (
-    <option value={value}>
-      {children}
-    </option>
-  );
+  return <option value={value}>{children}</option>;
 };
