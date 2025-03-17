@@ -1,0 +1,242 @@
+/**
+    Using some opensource projects in here: 
+        Monocraft: https://github.com/IdreesInc/Monocraft
+            - Fonts
+        range-input.css: https://range-input-css.netlify.app
+            - Custom range inputs
+*/
+@font-face {
+  font-family: 'Monocraft';
+  src: local('Monocraft'), url('../../fonts/Monocraft-01.ttf'), format('truetype');
+}
+
+@font-face {
+  font-family: 'Monocraft-Light';
+  src: local('Monocraft-Light'), url('../../fonts/Monocraft-Light-09.ttf'), format('truetype');
+}
+
+:root {
+  --minecraft-form-font-light: 'Monocraft-Light', sans-serif;
+  --minecraft-form-font: 'Monocraft', sans-serif;
+  --minecraft-form-font-color-default: var(--minecraft-form-color-dark-gray);
+
+  --minecraft-form-input-slider-knob-color: var(--minecraft-form-color-gray);
+  --minecraft-form-input-slider-knob-color-focus: var(--minecraft-form-color-green-light);
+
+  --minecraft-form-input-slider-track-color: #c0bfbc;
+  --minecraft-form-input-slider-track-color-focus: var(--minecraft-form-color-green-dark);
+
+  --minecraft-form-color-green-dark: #257613;
+  --minecraft-form-color-green-light: #4caf50;
+  --minecraft-form-color-dark-gray: #727272;
+  --minecraft-form-color-gray: #939393;
+  --minecraft-form-color-light-gray: #d3d3d3;
+}
+
+form.minecraft-form input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 25rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+form.minecraft-form input[type='range']:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+form.minecraft-form input[type='range']::-webkit-slider-runnable-track {
+  background-color: var(--minecraft-form-input-slider-track-color);
+  border-radius: 0rem;
+  height: 1rem;
+}
+
+form.minecraft-form input[type='range']:focus::-webkit-slider-runnable-track {
+  background-color: var(--minecraft-form-input-slider-track-color-focus);
+  outline-offset: 0;
+}
+
+/* slider thumb */
+form.minecraft-form input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -6.4px; /* Centers thumb on the track */
+  background-color: var(--minecraft-form-input-slider-knob-color);
+  border-radius: 0rem;
+  height: 1.8rem;
+  width: 1rem;
+}
+
+form.minecraft-form input[type='range']:focus::-webkit-slider-thumb {
+  outline: 2px solid var(--minecraft-form-color-light-gray);
+  background-color: var(--minecraft-form-input-slider-track-color-focus);
+  outline-offset: 0;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+form.minecraft-form input[type='range']::-moz-range-track {
+  background-color: var(--minecraft-form-input-slider-track-color);
+  border-radius: 0rem;
+  height: 1rem;
+}
+
+/* slider thumb */
+form.minecraft-form input[type='range']::-moz-range-thumb {
+  background-color: var(--minecraft-form-input-slider-knob-color);
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0rem;
+  height: 1.8rem;
+  width: 0.9rem;
+  border-style: outset;
+  border-color: black;
+  outline: black;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-offset: 0;
+  box-sizing: border-box;
+  border-width: 1px;
+}
+
+form.minecraft-form input[type='range']:focus::-moz-range-track {
+  outline: 2px solid var(--minecraft-form-color-light-gray);
+  background-color: var(--minecraft-form-input-slider-track-color-focus);
+  outline-offset: 0;
+}
+
+form.minecraft-form input[type='range']:focus::-moz-range-thumb {
+  outline: 2px solid white;
+  outline-offset: 0;
+  background-color: var(--minecraft-form-input-slider-knob-color-focus);
+}
+
+form.minecraft-form {
+  font-family: var(--minecraft-form-font);
+  background-color: #dcdcdc; /* Light gray background */
+  border-left: 4px solid #fff;
+  border-top: 4px solid #fff;
+  border-radius: 6px;
+  outline: 2px solid #000;
+  padding: 8px;
+  box-shadow: 4px 4px 0px var(--minecraft-form-input-slider-knob-color);
+  min-width: 250px;
+}
+
+form.minecraft-form button.minecraft-form-close {
+  float: right;
+  position: relative;
+  right: -3px;
+  top: -2px;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  padding-right: 0;
+  padding-left: 2px;
+  margin: 0;
+  height: 25px;
+  width: 30px;
+  font-family: var(--minecraft-form-font-light);
+  font-size: 13pt;
+  color: var(--minecraft-form-font-color-default);
+  border: none;
+  background-color: transparent;
+}
+
+form.minecraft-form button.minecraft-form-close:hover {
+  background-color: #8885;
+  cursor: pointer;
+}
+
+form.minecraft-form h1 {
+  font-family: var(--minecraft-form-font-light);
+  text-align: center;
+  font-size: 13pt;
+  margin: 0;
+  margin-bottom: 10px;
+  color: var(--minecraft-form-font-color-default);
+}
+
+form.minecraft-form fieldset {
+  border: none;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+form.minecraft-form fieldset div {
+  background-color: #333;
+  font-size: 12pt;
+}
+
+form.minecraft-form button.minecraft-form-button {
+  font-family: var(--minecraft-form-font);
+  color: var(--minecraft-form-font-color-default);
+  background-color: #d3d3d3;
+  border: 2px outset black;
+  padding: 10px 15px;
+  font-size: 17px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+  min-height: 60px;
+  width: calc(100% - 10px);
+}
+
+form.minecraft-form button.minecraft-form-button:hover {
+  background-color: var(--minecraft-form-color-green-dark);
+  border-color: white;
+  color: white;
+}
+
+form.minecraft-form .minecraft-form-label {
+  font-size: 13pt;
+  margin-top: 5px;
+}
+
+form.minecraft-form .minecraft-form-input-text input {
+  margin-top: 5px;
+  width: calc(100% - 10px);
+  height: 40pt;
+  caret-color: var(--minecraft-form-color-green-light);
+  color: white;
+  background-color: #505353;
+  font-family: var(--minecraft-form-font);
+  font-size: 12pt;
+  border-color: black;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid solid inset solid;
+}
+
+form.minecraft-form .minecraft-form-input-text input:focus {
+  outline: none;
+}
+
+form.minecraft-form .minecraft-form-input-text input:hover {
+  border-color: white;
+}
+
+form.minecraft-form .minecraft-form-input-slider input {
+  margin-top: 5px;
+  width: calc(100% - 10px);
+}
+
+form.minecraft-form .minecraft-form-input-dropdown select {
+  margin-top: 5px;
+  width: calc(100% - 10px);
+}
+
+form.minecraft-form .minecraft-form-input-toggle {
+  display: flex;
+  flex-direction: row;
+}

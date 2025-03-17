@@ -1,0 +1,57 @@
+{
+  "name": "minecraft-event-driven-form-react",
+  "version": "0.0.0",
+  "description": "Event driven minecraft forms in the web",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c && dts-bundle-generator -o dist/MinecraftEventDrivenFormReact.d.ts src/index.ts ",
+    "docs": "npx ladle build",
+    "test": "jest",
+    "prettier": "npm run prettier:base -- --write",
+    "prettier:check": "npm run prettier:base -- --check",
+    "prettier:base": "prettier src/** *.json ./*js README.md",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
+  },
+  "files": [
+    "package.json",
+    "dist/**",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "keywords": [
+    "minecraft",
+    "minecraft-react"
+  ],
+  "author": "Josejulio Martínez",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@mine-scripters/minecraft-event-driven-form-base": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ladle/react": "^5.0.1",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/mdx": "^2.0.13",
+    "@types/react-dom": "^19.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "dts-bundle-generator": "^9.5.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-jest": "^28.11.0",
+    "prettier": "^3.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rollup": "^4.35.0",
+    "rollup-plugin-import-css": "^3.5.8",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
